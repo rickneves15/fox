@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
-import SuspenseSpinner from '../components/SuspenseFallback';
 import { useRoutes } from 'react-router-dom';
+
+import SuspenseSpinner from '../components/SuspenseFallback';
 import { PublicRoutes } from './PublicRoutes';
 
 //https://reactrouter.com/docs/en/v6

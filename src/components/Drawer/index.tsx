@@ -1,13 +1,8 @@
-import { ReactNode } from 'react';
-import { styled, useTheme } from '@mui/material/styles';
-import { Divider, SwipeableDrawer, IconButton } from '@mui/material';
-import Icon from '@mui/material/Icon';
+import React from 'react';
+import { Divider, Icon, IconButton, styled, SwipeableDrawer, useTheme } from '@mui/material';
 
 import { useDrawer } from '../../utils/hooks/useDrawer';
-
-interface DrawerProps {
-    children: ReactNode;
-}
+import List from './List';
 
 const drawerWidth = 240;
 
@@ -18,7 +13,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 1),
 }));
 
-const Drawer = ({ children }: DrawerProps) => {
+const Drawer = () => {
     const theme = useTheme();
     const { handleDrawerToggle, open } = useDrawer();
     return (
@@ -43,7 +38,7 @@ const Drawer = ({ children }: DrawerProps) => {
                 </IconButton>
             </DrawerHeader>
             <Divider />
-            {children}
+            <List />
         </SwipeableDrawer>
     );
 };
